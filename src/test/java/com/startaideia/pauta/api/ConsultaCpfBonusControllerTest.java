@@ -18,7 +18,7 @@ import java.net.URI;
 @AutoConfigureMockMvc
 class ConsultaCpfBonusControllerTest {
 
-    @Autowired
+   /* @Autowired
     private MockMvc mvc;
 
     @Test
@@ -34,7 +34,7 @@ class ConsultaCpfBonusControllerTest {
                         .status()
                         .is(200));
 
-    }
+    }*/
 
 
 }
