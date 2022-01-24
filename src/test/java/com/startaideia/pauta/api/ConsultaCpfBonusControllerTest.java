@@ -17,8 +17,7 @@ import java.net.URI;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 class ConsultaCpfBonusControllerTest {
-
-   /* @Autowired
+    @Autowired
     private MockMvc mvc;
 
     @Test
@@ -29,12 +28,29 @@ class ConsultaCpfBonusControllerTest {
         mvc.perform(MockMvcRequestBuilders
                         .get(uri)
                         .param("cpf", "22704053820")
+                        .param("codUser", "2")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers
                         .status()
                         .is(200));
 
-    }*/
+    }
+
+    @Test
+    public void shouldReturn404ConsultarCpfBonus() throws Exception {
+
+        URI uri = new URI("/cpf");
+
+        mvc.perform(MockMvcRequestBuilders
+                        .get(uri)
+                        .param("cpf", "22704053")
+                        .param("codUser", "2")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers
+                        .status()
+                        .is(404));
+
+    }
 
 
 }
