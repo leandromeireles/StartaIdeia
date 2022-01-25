@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "2dc33c3f-2d42-43da-b783-aa9a56c01a47",
+		"name": "Startaideia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "criar Pauta",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codPauta\": 10,\r\n    \"dtInicioVotacao\": \"2022-01-24 22:00:02\",\r\n    \"dtFimVotacao\": \"2022-01-24 22:59:02\",\r\n    \"nomePauta\": \"vaga carro\"\r\n}"
+				},
+				"url": {
+					"raw": "{{localhost}}/pauta",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"pauta"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "criar Pauta",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codPauta\": 9,\r\n    \"dtInicioVotacao\": \"2022-01-24 22:00:02\",\r\n    \"dtFimVotacao\": \"2022-01-24 22:59:02\",\r\n    \"nomePauta\": \"vaga carro\"\r\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}/pauta",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"pauta"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Jan 2022 21:08:41 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "inserir Voto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idAssociado\": 3,\r\n    \"voto\": \"NAO\",\r\n    \"codPauta\": 9\r\n}"
+				},
+				"url": {
+					"raw": "{{localhost}}/voto",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"voto"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "inserir Voto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idAssociado\": 3,\r\n    \"voto\": \"NAO\",\r\n    \"codPauta\": 9\r\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}/voto",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"voto"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Jan 2022 21:08:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Fora do Período de Votação"
+				}
+			]
+		},
+		{
+			"name": "consultar Votos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{localhost}}/voto?codPauta=2",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"voto"
+					],
+					"query": [
+						{
+							"key": "codPauta",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "consultar Votos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost}}/voto?codPauta=2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"voto"
+							],
+							"query": [
+								{
+									"key": "codPauta",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Jan 2022 21:09:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"votoSim\": 4,\n    \"votoNao\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "consultar Cpf Bonus",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{localhost}}/cpf?cpf=22704053820&codUser=2",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"cpf"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "22704053820"
+						},
+						{
+							"key": "codUser",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "consultar Cpf Bonus",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localhost}}/cpf?cpf=22704053820&codUser=2",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"cpf"
+							],
+							"query": [
+								{
+									"key": "cpf",
+									"value": "22704053820"
+								},
+								{
+									"key": "codUser",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Jan 2022 22:04:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ABLE_TO_VOTE\",\n    \"coStatus\": \"OK\"\n}"
+				}
+			]
+		}
+	]
+}
